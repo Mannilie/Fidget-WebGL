@@ -7,11 +7,23 @@
     <style>
     /* a style sheet needs to be present for cursor hiding and custom cursors to work. */
     </style>
-	<link rel="stylesheet" href="css/style.css"></link>
+	
+	<script type="text/javascript" src="https://code.createjs.com/tweenjs-0.6.1.min.js"></script>
+	<script type="text/javascript" src="TemplateData/CSSPlugin.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="TemplateData/style.css">	
   </head>
   <body>
-    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="100%" height="100%"></canvas>
-    <script type='text/javascript'>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="576px" width="1024px"></canvas>
+    <div id="loadingBox">
+		<img id="spinner" src="TemplateData/spinner.gif" />
+		<div id="loadingBar">
+			<div id="bgBar"></div>
+			<div id="progressBar"></div>
+			<p id="loadingInfo">Loading...</p>
+		</div>
+	</div>
+	<script type='text/javascript'>
   // connect to canvas
   var Module = {
     TOTAL_MEMORY: 268435456,
@@ -95,5 +107,6 @@ try {
   codeXHR.send(null);
 }
 </script>
+	<script src="TemplateData/UnityProgress.js"></script>
   </body>
 </html>
